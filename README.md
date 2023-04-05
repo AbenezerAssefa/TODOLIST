@@ -1,6 +1,6 @@
 <!-- TABLE OF CONTENTS -->
 
-# 📗 Table of Content's
+# 📗 Table of Content
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
@@ -31,7 +31,7 @@
 
 - HTML5.
 - CSS3.
-- Javascript using ES6..
+- Javascript using ES6.
 - Webpack.
 
 # To Do List 📝
