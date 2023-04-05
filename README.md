@@ -49,7 +49,8 @@
 
 # 🚀 Live Demo <a name="live-demo"></a>
 
-[To Do List 📝](https://abenezerassefa.github.io/TODOLIST/)
+
+[Link to live demo](https://abenezerassefa.github.io/TODOLIST/)
 
 <div>
 <img src="images/img1.png" width="230">
