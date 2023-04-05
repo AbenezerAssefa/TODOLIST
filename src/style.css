@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  width: 100%;
+  overflow: hidden;
+  background: #f7f4f4;
+}
+
+.wrapper {
+  max-width: 405px;
+  padding: 4%;
+  margin: 137px auto;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.toplist {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+
+.toplist h4,
+.refresh {
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin: 2% 5%;
+}
+
+.refresh {
+  cursor: pointer;
+}
+
+.task-input {
+  display: flex;
+  height: 52px;
+  border-bottom: 1px solid #ccc;
+}
+
+.task-input .enter {
+  margin-top: 3%;
+  padding: 0 6%;
+  cursor: pointer;
+}
+
+.task-input input {
+  padding: 0 5%;
+  width: 90%;
+  outline: none;
+  font-size: 1rem;
+  font-style: italic;
+  border: none;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 8px;
+  font-size: 17px;
+  color: #444;
+  cursor: pointer;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-box .task {
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 17px;
+  border-bottom: 1px solid #ccc;
+}
+
+.task label input {
+  margin-top: 7px;
+  accent-color: #82aef5;
+}
+
+.task label p {
+  margin-left: 12px;
+  word-wrap: break-word;
+}
+
+.checkme {
+  margin-right: 2%;
+}
+
+.listitem {
+  width: 75%;
+  border: none;
+  outline: none;
+}
+
+i {
+  font-size: 0.99rem;
+  color: rgb(87, 87, 87);
+}
+
+.clearall {
+  width: 100%;
+  background: none;
+  text-align: center;
+  border: none;
+  margin-top: 5%;
+}
+
+.clearall:hover {
+  text-decoration: underline;
+}
+
+button,
+i {
+  cursor: pointer;
+}
+
+.save {
+  display: none;
+}
+
+.empty {
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 5%;
+  color: rgba(250, 2, 51, 0.815);
+}
