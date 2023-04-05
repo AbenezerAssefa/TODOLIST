@@ -50,7 +50,7 @@
 # 🚀 Live Demo <a name="live-demo"></a>
 
 
-[Link to live demo](https://abenezerassefa.github.io/TODOLIST/)
+[Link to live demo](https://abenezerassefa.github.io/TODOLIST/dist/)
 
 
 
