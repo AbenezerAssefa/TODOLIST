@@ -52,12 +52,7 @@
 
 [Link to live demo](https://abenezerassefa.github.io/TODOLIST/)
 
-<div>
-<img src="images/img1.png" width="230">
-<img src="images/img2.png" width="230">
-<img src="images/img3.png" width="230"  height="186">
-<img src="images/img4.png" width="230"  height="186">
-</div>
+
 
 ### Server
 
