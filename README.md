@@ -49,7 +49,7 @@
 
 # 🚀 Live Demo <a name="live-demo"></a>
 
-[To Do List 📝]()
+[To Do List 📝](https://abenezerassefa.github.io/TODOLIST/)
 
 <div>
 <img src="images/img1.png" width="230">
@@ -120,7 +120,7 @@ After Installing all the packages run this command `npm run start` to start dev 
 
 # Deployment
 
-### You can deploy this project using
+### You can deploy this project using https://abenezerassefa.github.io/TODOLIST/
 
 - Github pages.
 
