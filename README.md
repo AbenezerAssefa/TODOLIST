@@ -43,10 +43,10 @@
 
 # 🚀 Live Demo <a name="live-demo"></a>
 
-
 [Link to live demo](https://abenezerassefa.github.io/TODOLIST/dist/)
 
 [To Do List 📝](https://salwa99.github.io/To-Do-List/)
+
 <div>
 <img src="images/img1.png" width="230">
 <img src="images/img2.png" width="230">
@@ -169,4 +169,4 @@ I would like to thank Microverse team for this journey.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed..
