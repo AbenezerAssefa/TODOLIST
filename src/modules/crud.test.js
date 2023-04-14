@@ -8,7 +8,17 @@ describe('Test crud functionality', () => {
       <ul class="task-box"></ul>
     `;
 
-    
+    addItem('First Item');
+    const todos = JSON.parse(localStorage.getItem("todo-list"));
+    const todoBox = document.querySelector('.task-box');
+    todos.forEach((item) => {
+      todoBox.innerHTML = `<li>${item.description}</li>`;
+    });
+    const Li = document.querySelectorAll('.task-box li');
+
+    expect(Li).toHaveLength(1);
+    expect(JSON.parse(localStorage.getItem('todo-list'))).toHaveLength(1);
+  });
 
   it('adds an <li> to the DOM', () => {
     document.body.innerHTML = `
