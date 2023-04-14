@@ -34,12 +34,6 @@
 - Javascript using ES6.
 - Webpack.
 
-# To Do List 📝
-
-<div align="center">
-
-</div>
-
 <### Client
 
 - HTML.
@@ -49,8 +43,10 @@
 
 # 🚀 Live Demo <a name="live-demo"></a>
 
-[To Do List 📝]()
 
+[Link to live demo](https://abenezerassefa.github.io/TODOLIST/dist/)
+
+[To Do List 📝](https://salwa99.github.io/To-Do-List/)
 <div>
 <img src="images/img1.png" width="230">
 <img src="images/img2.png" width="230">
@@ -120,7 +116,7 @@ After Installing all the packages run this command `npm run start` to start dev 
 
 # Deployment
 
-### You can deploy this project using
+### You can deploy this project using https://abenezerassefa.github.io/TODOLIST/
 
 - Github pages.
 

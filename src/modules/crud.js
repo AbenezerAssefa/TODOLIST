@@ -43,25 +43,28 @@ function showTodo() {
     taskInput.value = ''
 }
 
+export const addItem = () => {
+    let storedList = localStorage.getItem("todo-list");
+
+    if (storedList === null) {
+        todoList = [];
+    } else {
+        todoList = JSON.parse(storedList);
+        index = todoList.length === 0 ? 0 : todoList.length;
+    }
+
+    const LocalStore = {
+        index: index,
+        description: taskInput.value,
+        completed: completed,
+    };
+    todoList.push(LocalStore);
+    localStorage.setItem("todo-list", JSON.stringify(todoList));
+}
 
 taskInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter" && taskInput.value.length != 0) {
-        let storedList = localStorage.getItem("todo-list");
-
-        if (storedList === null) {
-            todoList = [];
-        } else {
-            todoList = JSON.parse(storedList);
-            index = todoList.length === 0 ? 0 : todoList.length;
-        }
-
-        const LocalStore = {
-            index: index,
-            description: taskInput.value,
-            completed: completed,
-        };
-        todoList.push(LocalStore);
-        localStorage.setItem("todo-list", JSON.stringify(todoList));
+        addItem();
         showTodo();
     }
 });
@@ -89,6 +92,14 @@ window.editItem = (index) => {
     return mainItem;
 };
 
+export const edit = (id) => {
+    const mainItem = document.getElementById("item" + id + "");
+    let storedData = localStorage.getItem("todo-list");
+    todoList = JSON.parse(storedData);
+    todoList[id].description = mainItem.value;
+    localStorage.setItem("todo-list", JSON.stringify(todoList));
+}
+
 window.saveItem = (index) => {
     const editBtn = document.getElementById("edit" + index + "");
     const saveBtn = document.getElementById("save" + index + "");
@@ -96,52 +107,62 @@ window.saveItem = (index) => {
     saveBtn.style.display = "none";
     editBtn.style.display = "block";
 
-    const mainItem = document.getElementById("item" + index + "");
-    let storedData = localStorage.getItem("todo-list");
-    todoList = JSON.parse(storedData);
-    todoList[index].description = mainItem.value;
+    edit(index);
 
-    localStorage.setItem("todo-list", JSON.stringify(todoList));
     showTodo()
 };
 
-window.removeItem = (index) => {
+export const remove = (id) => {
     let storedData = localStorage.getItem("todo-list");
     todoList = JSON.parse(storedData);
-    todoList.splice(index, 1);
+    todoList.splice(id, 1);
     for (let i = 0; i < todoList.length; i++) {
         todoList[i].index = i;
     }
     localStorage.setItem("todo-list", JSON.stringify(todoList));
-    showTodo()
+}
+
+window.removeItem = (index) => {
+    remove(index);
+    showTodo();
 };
 
-window.CheckMe = (index) => {
-    const CheckCheck = document.getElementById(`check${index}`);
+export const checkFunction = (id) => {
+    const CheckCheck = document.getElementById(`check${id}`);
     if (CheckCheck.checked == true) {
       let storedData = localStorage.getItem("todo-list");
       todoList = JSON.parse(storedData);
-      todoList[index].completed = true;
+      todoList[id].completed = true;
       localStorage.setItem("todo-list", JSON.stringify(todoList));
       showTodo();
     }
     else {
       let storedData = localStorage.getItem("todo-list");
       todoList = JSON.parse(storedData);
-      todoList[index].completed = false;
+      todoList[id].completed = false;
       localStorage.setItem("todo-list", JSON.stringify(todoList));
       showTodo();
     }
-  }
+}
+
+window.CheckMe = (index) => {
+
+    checkFunction(index);
+}
+
+export const clear = () => {
+    let storedData = localStorage.getItem("todo-list");
+    todoList = JSON.parse(storedData);
+    let AfterCleared = todoList.filter((element) => element.completed === false);
+    todoList = AfterCleared;
+    for(let i=0;i<todoList.length;i++){
+      todoList[i].index = i;
+    }
+    localStorage.setItem("todo-list", JSON.stringify(todoList));
+}
 
 ClearAll.addEventListener('click', ()=>{
-    let storedData = localStorage.getItem("todo-list");
-      todoList = JSON.parse(storedData);
-      let AfterCleared = todoList.filter((element) => element.completed === false);
-      todoList = AfterCleared;
-      for(let i=0;i<todoList.length;i++){
-        todoList[i].index = i;
-      }
-      localStorage.setItem("todo-list", JSON.stringify(todoList));
-      showTodo();
+
+    clear();
+    showTodo();
 })
