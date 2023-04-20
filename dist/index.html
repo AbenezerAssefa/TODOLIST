@@ -1,39 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible"
-    content="IE=edge">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer" />
-  <link rel="stylesheet"
-    href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-  <title>To Do List</title>
-<script defer src="index.bundle.js"></script></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Fredoka+One&family=Gloria+Hallelujah&family=Padyakke+Expanded+One&family=Raleway&family=Varela+Round&display=swap" rel="stylesheet">
 
+<script src="https://kit.fontawesome.com/713945395b.js" crossorigin="anonymous"></script>
+    <title>TO DO APP</title>
+<script defer src="bundle.js"></script></head>
 <body>
-  <div class="wrapper">
-    <div class="toplist">
-      <h4>Today's To Do</h4>
-      <i class="uil uil-sync refresh"></i>
-    </div>
-    <div class="task-input">
-      <input type="text"
-        placeholder="Add to your list..."
-        class="addtolist">
-      <i class="uil uil-enter enter"></i>
-    </div>
-    <ul class="task-box"></ul>
-    <button class="clearall">
-      Clear All Completed
+    <button class="hamburger-menu">
+      <i class="fa-solid fa-bars fa-xl"></i>
     </button>
-  </div>
-</body>
+    <nav class="sidebar-menu">
+      <button class="close-menu-btn">x</button>
+      <div class="all-tasks-menu">
+        <a href="#" class="menu-link all">
+          <i class="fa-solid fa-list"></i>
+          <p class="link-description ">All tasks</p>
+        </a>
+        <a href="#" class="menu-link important">
+          <i class="fa-solid fa-star"></i>
+          <p class="link-description">Important</p>
+        </a>
+        <a href="#" class="menu-link checked">
+          <i class="fa-solid fa-check"></i>
+          <p class="link-description ">Completed</p>
+        </a>
+        <a href="#" class="menu-link today">
+          <i class="fa-solid fa-calendar-week"></i>
+          <p class="link-description">Today</p>
+        </a>
+      </div>
+      <div class="all-projects-container">
+        <h3 class="all-projects-menu">
+          <i class="fa-solid fa-folder-tree"></i>
+          Projects
+        </h3>
+        
+      </div>
+    </nav>
+    <main class="main-app">
+      <h1 class="app-title">
+        <i class="fa-solid fa-clipboard-list"></i>
+         TO DO APP</h1>
+      <div class="list-container">
+        <div class="title-section">
+          <h2 class="title-section-text">ALL TASKS</h2>
+          <button class="open-modal-btn">+</button>
+          </div>
+        
+      <div class="all-tasks">
+        <div class="task-container">
+          <div class="checkbox-task">
+            <input class="checkbox" type="checkbox">
+            <p class="task-text">Clean house</p>
+          </div>
+          <div class="all-icons">
+            <i class="fa-regular fa-pen-to-square"></i>
+          <i class="fa-regular fa-trash-can"></i>
+          </div>
+        </div>
+        <div class="task-container">
+          <div class="checkbox-task">
+            <input class="checkbox" type="checkbox">
+            <p class="task-text">Fix car</p>
+          </div>
+          <div class="all-icons">
+            <i class="fa-regular fa-pen-to-square"></i>
+          <i class="fa-regular fa-trash-can"></i>
+          </div>
+          
+          
+        </div>
+      </div>
+      </div>
+    </main>
+    <div class="modal modal-add">
+      <div class="title-modal">
+        <h3>Add new task</h3>
+        <button class="close-modal">x</button>
+      </div>
+      <div class="form-container">
+        <form class="form">
+          <div class="add-container title">
+            <label 
+              class="add-title-label">Title
+             </label>
+            <input 
+             class="add-title input"
+             type="text"
+             required
+            placeholder="Add title">
+          </div>
+          
+          <div class="add-container description">
+            <label 
+              class="add-desc-label">Description
+            </label>
+            <textarea 
+              class="add-desc"
+              type="text"
+              placeholder="Add a Description...."></textarea>
+              </div>
+          <div class="add-container date">
+             <label 
+              class="add-date-label">
+              Due date
+             </label>
+             <input 
+             class="add-date input"
+             type="date">
+            </div>
+          <div class="choose-importance">
+            <label class="important-label">How important?</label>
+            <select class="important-select">
+              <option value="">--Please choose an option--</option>
+              <option value= "not important" class="no-important">Not much</option>
+              <option value="important" class="yes-important">Super Important</option>
+             </select>
+          </div>
+          <button class="add-task-btn">Add</button>
+        </form>
+      </div>
+    </div>
+    <div class="modal edit-task">
+      
+    
+      </div>
+    </div>
+    <div class="overlay"></div>
 
+  </div>
+  <script src="dist/bundle.js"></script>
+
+</body>
 </html>

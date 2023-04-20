@@ -23,7 +23,16 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-## A solo programming project that heighlights the use of webpack to bundle JavaScript, ES6 syntax
+**To Do - App** is a small app where you can record all your tasks and projects you have to do. You can organize your week, and mark important and completed tasks.
+
+## Requierements
+
+1. Your todo list should have projects or separate lists of todos.
+2. You should separate your application logic (i.e. creating new todos, setting todos as complete, changing todo priority etc.) from the DOM-related stuff, so keep all of those things in separate modules.
+3. View all projects
+4. View all todos in each project (probably just the title and duedate… perhaps changing color for different priorities)
+5. Expand a single todo to see/edit its details
+6. Delete a todo
 
 # 🛠 Built With
 
@@ -46,13 +55,6 @@
 [Link to live demo](https://abenezerassefa.github.io/TODOLIST/dist/)
 
 [To Do List 📝](https://salwa99.github.io/To-Do-List/)
-
-<div>
-<img src="images/img1.png" width="230">
-<img src="images/img2.png" width="230">
-<img src="images/img3.png" width="230"  height="186">
-<img src="images/img4.png" width="230"  height="186">
-</div>
 
 ### Server
 

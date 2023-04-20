@@ -1,14 +1,24 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "jest": true
-    },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "rules": {
-    }
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "extends": ["airbnb-base"],
+  "rules": {
+    "no-shadow": "off",
+    "no-param-reassign": "off",
+    "eol-last": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off"
+  },
+  "ignorePatterns": [
+    "dist/",
+    "build/"
+  ]
 }

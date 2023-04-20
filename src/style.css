@@ -1,136 +1,478 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-* {
+p,
+h1,
+h2,
+h3,
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
-body {
-  width: 100%;
-  overflow: hidden;
-  background: #f7f4f4;
-}
-
-.wrapper {
-  max-width: 405px;
-  padding: 4%;
-  margin: 137px auto;
-  background: #fff;
-  border-radius: 7px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.toplist {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #ccc;
-}
-
-.toplist h4,
-.refresh {
-  font-size: 1.2rem;
-  font-weight: 100;
-  margin: 2% 5%;
-}
-
-.refresh {
-  cursor: pointer;
-}
-
-.task-input {
-  display: flex;
-  height: 52px;
-  border-bottom: 1px solid #ccc;
-}
-
-.task-input .enter {
-  margin-top: 3%;
-  padding: 0 6%;
-  cursor: pointer;
-}
-
-.task-input input {
-  padding: 0 5%;
-  width: 90%;
-  outline: none;
-  font-size: 1rem;
-  font-style: italic;
-  border: none;
-}
-
-.filters {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 8px;
-  font-size: 17px;
-  color: #444;
-  cursor: pointer;
-}
-
-.task {
-  display: flex;
-  justify-content: space-between;
-}
-
-.task-box .task {
-  list-style: none;
-  font-size: 17px;
-  padding: 12px 17px;
-  border-bottom: 1px solid #ccc;
-}
-
-.task label input {
-  margin-top: 7px;
-  accent-color: #82aef5;
-}
-
-.task label p {
-  margin-left: 12px;
-  word-wrap: break-word;
-}
-
-.checkme {
-  margin-right: 2%;
-}
-
-.listitem {
-  width: 75%;
-  border: none;
-  outline: none;
-}
-
-i {
-  font-size: 0.99rem;
-  color: rgb(87, 87, 87);
-}
-
-.clearall {
-  width: 100%;
-  background: none;
-  text-align: center;
-  border: none;
-  margin-top: 5%;
-}
-
-.clearall:hover {
-  text-decoration: underline;
-}
-
-button,
-i {
-  cursor: pointer;
-}
-
-.save {
+/* <!-- Sidebar menu STARTS --> */
+.sidebar-menu {
   display: none;
+  position: fixed;
+  height: 100%;
+  width: 95%;
+  padding: 40px 20px;
+  background: radial-gradient(circle at 7.5% 24%, rgb(237, 161, 193) 0%, rgb(250, 178, 172) 25.5%, rgb(190, 228, 210) 62.3%, rgb(215, 248, 247) 93.8%);
+  transition: transform 250ms;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.empty {
-  font-size: 0.9rem;
+.close-menu-btn {
+  background: none;
+  border: none;
+  position: fixed;
+  left: 1px;
+  top: 2px;
+  font-size: 25px;
+}
+
+.all-tasks-menu {
+  padding: 20px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(240, 248, 255, 0.366);
+  border-radius: 20px;
+  gap: 20px;
+}
+
+.all-tasks-menu a {
+  list-style: none;
+  text-decoration: none;
+}
+
+.menu-link {
+  display: flex;
+  flex-direction: row;
+  color: rgb(20, 91, 70);
+  gap: 10px;
+  background-color: rgb(243, 243, 243);
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.all-projects-menu {
+  display: none;
+  margin-top: 120px;
+  border-bottom: 1px solid;
   text-align: center;
-  padding: 5%;
-  color: rgba(250, 2, 51, 0.815);
+}
+
+.all-projects-container {
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+.hamburger-menu {
+  background: none;
+  border: none;
+  color: black;
+  position: fixed;
+  top: 4px;
+  left: 4px;
+}
+
+/* <!-- Sidebar menu ENDS --> */
+
+/* <!-- Main app  --> */
+.app-title {
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Raleway', sans-serif;
+  background: radial-gradient(circle at 10% 20%, rgb(100, 50, 132) 0%, rgb(17, 58, 39) 54.2%, rgb(91, 136, 196) 100.3%);
+  color: whitesmoke;
+  padding: 20px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.465);
+}
+
+.title-section {
+  font-size: 17px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  padding: 30px;
+  color: rgb(69, 68, 68);
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.open-modal-btn {
+  background-color: rgb(80, 186, 170);
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  border: none;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+}
+
+.task-container {
+  border-bottom: 0.4px solid rgba(179, 179, 179, 0.442);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 20px;
+  font-family: 'Varela Round', sans-serif;
+  color: rgb(95, 94, 94);
+  transition: 0.3s;
+  padding: 5px 0 2px 5px;
+}
+
+.checkbox-task {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* <!-- Modal starts --> */
+.modal {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  border-radius: 10px;
+  background: white;
+  font-family: 'Varela Round', sans-serif;
+  color: white;
+  border: 2px solid #d57d7d;
+  text-align: center;
+  font-size: 20px;
+  user-select: none;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgb(33, 123, 93);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.6;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.title-modal {
+  background: linear-gradient(109.6deg, rgb(151, 213, 255) 11.2%, rgb(255, 155, 185) 91.1%);
+  color: rgb(81, 81, 81);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 25px;
+  position: fixed;
+  right: 4px;
+  top: 4px;
+}
+
+.form-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: grey;
+}
+
+.add-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.all-icons {
+  color: rgb(58, 59, 59);
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+}
+
+.task-date {
+  color: rgba(62, 140, 189, 0.77);
+  font-size: 10px;
+}
+
+.fa-pen-to-square {
+  color: rgb(24, 176, 138);
+}
+
+.fa-magnifying-glass {
+  color: rgb(189, 179, 112);
+}
+
+.fa-star {
+  font-size: 12px;
+  color: rgb(225, 219, 39);
+}
+
+.edit-task-btn {
+  background: linear-gradient(109.6deg, rgb(151, 213, 255) 11.2%, rgb(255, 155, 185) 91.1%);
+  border-radius: 10px;
+  padding: 10px 30px 10px 30px;
+  margin: 20px;
+  border: none;
+  font-size: 20px;
+  color: white;
+}
+
+.add-desc::placeholder {
+  color: gray;
+}
+
+textarea {
+  width: 95%;
+  margin-bottom: 10px;
+  border: 0.5px solid rgb(107, 107, 107);
+  border-radius: 5px;
+  font-size: 14px;
+  padding-left: 10px;
+  height: 100px;
+  color: rgba(128, 128, 128, 0.608);
+}
+
+.input {
+  width: 94%;
+  margin-bottom: 10px;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  font-size: 14px;
+  padding-left: 10px;
+  height: 40px;
+  font-family: 'Varela Round', sans-serif;
+  color: rgba(128, 128, 128, 0.638);
+}
+
+.choose-importance {
+  text-align: left;
+}
+
+.add-task-btn {
+  background: linear-gradient(109.6deg, rgb(151, 213, 255) 11.2%, rgb(255, 155, 185) 91.1%);
+  color: rgb(81, 81, 81);
+  border-radius: 10px;
+  padding: 10px 30px 10px 30px;
+  margin: 20px;
+  border: none;
+  font-size: 20px;
+}
+
+.task-text {
+  font-size: 12px;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* <!-- Modal  ENDS --> */
+
+/* <!-- Modal info starts --> */
+.modal-info-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: grey;
+  padding-bottom: 20px;
+}
+
+.task-details {
+  background-color: white;
+  border-radius: 4px;
+  border: 0.5px grey;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.info-title {
+  font-size: 18px;
+  border-bottom: 0.5px solid rgb(168, 164, 164);
+  padding: 0;
+}
+
+.info {
+  font-size: 15px;
+  padding: 0;
+}
+
+.title-container-info {
+  padding: 15px;
+  text-align: center;
+  background: linear-gradient(109.6deg, rgb(151, 213, 255) 11.2%, rgb(255, 155, 185) 91.1%);
+  color: rgb(81, 81, 81);
+}
+
+/* <!-- Modal info ENDS --> */
+@media only screen and (min-width: 768px) {
+  /* <!-- Sidebar menu STARTS --> */
+  .close-menu-btn {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .sidebar-menu {
+    display: block;
+    position: fixed;
+    overflow: auto;
+    height: 100%;
+    width: 200px;
+    padding: 100px 20px;
+    background: radial-gradient(circle at 7.5% 24%, rgb(237, 161, 193) 0%, rgb(250, 178, 172) 25.5%, rgb(190, 228, 210) 62.3%, rgb(215, 248, 247) 93.8%);
+    transition: transform 250ms;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 18px;
+  }
+
+  .all-tasks-menu {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(240, 248, 255, 0.366);
+    border-radius: 20px;
+    gap: 20px;
+  }
+
+  .all-tasks-menu a {
+    list-style: none;
+    text-decoration: none;
+  }
+
+  .menu-link {
+    display: flex;
+    flex-direction: row;
+    color: rgb(20, 91, 70);
+    gap: 10px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 2px;
+    padding: 5px;
+  }
+
+  .all-projects-menu {
+    border-bottom: 1px solid;
+    text-align: center;
+  }
+
+  .all-projects-container {
+    background-color: whitesmoke;
+    border-radius: 10px;
+  }
+
+  /* <!-- Sidebar menu ENDS --> */
+
+  /* <!-- Main app--> */
+  .title-section {
+    padding-top: 80px;
+    justify-content: center;
+    font-size: 15px;
+  }
+
+  .main-app {
+    margin-left: 200px;
+  }
+
+  .list-container {
+    background-image: url('./img/depositphotos_49934977-stock-illustration-notebook-a4-size.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 700px;
+  }
+
+  .all-tasks {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .open-modal-btn {
+    background-color: rgb(80, 186, 170);
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: none;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .task-text {
+    font-size: 14px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    /* <!-- Sidebar menu --> */
+    .sidebar-menu {
+      width: 300px;
+    }
+
+    .main-app {
+      margin-left: 300px;
+    }
+
+    .list-container {
+      padding: 102px;
+    }
+
+    .open-modal-btn {
+      background-color: rgb(80, 186, 170);
+      height: 40px;
+      width: 40px;
+      border-radius: 20px;
+      border: none;
+      font-size: 35px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .task-container {
+      padding: 5px;
+    }
+
+    .task-text {
+      font-size: 14px;
+    }
+
+    .modal {
+      width: 550px;
+    }
+
+    textarea {
+      width: 500px;
+    }
+
+    .input {
+      width: 500px;
+    }
+  }
 }
