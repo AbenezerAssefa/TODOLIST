@@ -46,7 +46,7 @@
 
 [Link to live demo](https://abenezerassefa.github.io/TODOLIST/dist/)
 
-[To Do List 📝](https://salwa99.github.io/To-Do-List/)
+[To Do List 📝](https://abenezerassefa.github.io/TODOLIST/dist/)
 <div>
 <img src="images/img1.png" width="230">
 <img src="images/img2.png" width="230">
